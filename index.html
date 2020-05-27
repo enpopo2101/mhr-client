@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Azzara Bootstrap 4 Admin Dashboard</title>
+	<title>WRU Human Resource Management</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon"/>
-
+	<script src="assets/js/checkLogin.js"></script>
 	<!-- Fonts and icons -->
 	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
@@ -24,6 +24,7 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="assets/css/demo.css">
+
 </head>
 <body>
 	<div class="wrapper">
@@ -213,19 +214,19 @@
 										<div class="avatar-lg"><img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
 											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<p class="text-muted">hello@example.com</p><a href="userprofile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
+									<a class="dropdown-item" href="userprofile.html">My Profile</a>
 									<a class="dropdown-item" href="#">My Balance</a>
 									<a class="dropdown-item" href="#">Inbox</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Account Setting</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="login.html" id="logout">Logout</a>
 								</li>
 							</ul>
 						</li>
@@ -259,7 +260,7 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
+										<a href="userprofile.html">
 											<span class="link-collapse">My Profile</span>
 										</a>
 									</li>
@@ -1158,5 +1159,6 @@
 <!-- Azzara DEMO methods, don't include it in your project! -->
 <script src="assets/js/setting-demo.js"></script>
 <script src="assets/js/demo.js"></script>
+
 </body>
 </html>

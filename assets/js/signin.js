@@ -1,36 +1,57 @@
-const username1 = "tam98";
-const password1 = "123";
-
 var username = document.getElementById("username");
 var password = document.getElementById("password");
 var signinBtn = document.getElementById("signin");
-var storageKey = 'user';
+
+var fullName = document.getElementById("fullname");
+var email = document.getElementById("email");
+var passwordSignin = document.getElementById("passwordsignin");
+var confirmPassword = document.getElementById("confirmpassword");
+var signupBtn = document.getElementById("signup");
+
+var storageKey = "users";
 var dataString = localStorage.getItem(storageKey);
-var user;
+var users;
 
 signinBtn.addEventListener("click", signin);
+signupBtn.addEventListener("click", signup);
 
 if (dataString) {
-    user = JSON.parse(dataString);
+  users = JSON.parse(dataString);
 } else {
-    user = {
-        username: '',
-        password: ''
-    };
+  users = [];
 }
 
 function signin() {
   var usernameVal = username.value;
   var passwordVal = password.value;
-  if (usernameVal == user.username && passwordVal == user.password) {
-    // alert("ok");
-    // console.log(usernameVal);
-    // console.log(passwordVal);
-    user.username = usernameVal;
-    user.password = passwordVal;
-    window.location.href = 'index.html';
-    localStorage.setItem(storageKey, JSON.stringify(user));
+  for (let i = 0; i < users.length; i++) {
+    if (usernameVal == users[i].username && passwordVal == users[i].password) {
+      window.location.href = "index.html";
+      localStorage.setItem("status", JSON.stringify("loggedIn"));
+      return false;
+    }
+  }
+  alert("incorrect username or password!!!");
+}
+
+function signup() {
+  var fullNameVal = fullName.value;
+  var emailVal = email.value;
+  var passwordSigninVal = passwordSignin.value;
+  var confirmPasswordVal = confirmPassword.value;
+  var user = {
+    username: "",
+    email: "",
+    password: "",
+  };
+  if (confirmPasswordVal !== passwordSigninVal) {
+    alert("confirm wrong");
+    confirmPassword.value = "";
   } else {
-    alert("not ok");
+    user.username = fullNameVal;
+    user.email = emailVal;
+    user.password = passwordSigninVal;
+    users.push(user);
+    localStorage.setItem(storageKey, JSON.stringify(users));
   }
 }

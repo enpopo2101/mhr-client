@@ -33,6 +33,10 @@
     padding-top: 20px;
 }
 
+.title h3 {
+    margin-top: 10px;
+}
+
 .add-new-container {
     text-align: center;
 }

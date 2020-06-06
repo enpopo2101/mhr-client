@@ -8,4 +8,7 @@ if (localStorage.getItem("status") === null) {
 
 function logout() {
   localStorage.removeItem("status");
+  localStorage.removeItem("token");
+  localStorage.removeItem("fullName");
+  localStorage.removeItem("_id");
 }

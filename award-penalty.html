@@ -8,7 +8,12 @@
 	<link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" type="text/css" href="./semantic/dist/semantic.min.css">
-	
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+	<!-- <link rel="icon" type="image/x-icon" href="./semantic/dist/icons.ttf"> -->
+	<script src="https://kit.fontawesome.com/f5de978d1f.js" crossorigin="anonymous"></script>
+
 	<!-- Fonts and icons -->
 	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
@@ -387,6 +392,53 @@
 					<div class="page-category">
 
 					</div>
+					<div class="ui modal modal-create">
+						<div class="add-new-container">
+							<div class="add-new grid-container" id="addNewPopup">
+								<div class="grid-item">
+									<label>Mã nhân viên</label>
+									<div class="ui input">
+										<input type="text">
+									</div>
+								</div>
+								<div class="grid-item">
+									<label>Chủ đề</label>
+									<div class="ui input">
+										<input type="text">
+									</div>
+								</div>
+								<div class="grid-item">
+									<label>Họ và tên</label>
+									<div class="ui input">
+										<input type="text">
+									</div>
+								</div>
+								<div class="grid-item">
+									<label>Ngày quyết định<label>
+								</div>
+								<div class="grid-item">
+									<label>Loại</label>
+									<select class="ui dropdown selection">
+										<option>Gender</option>
+										<option value="1">Male</option>
+										<option value="0">Female</option>
+									</select>
+								</div>
+								<div class="grid-item">
+									<label>Nội dung</label>
+									<div class="ui input">
+										<input type="text">
+									</div>
+								</div>
+								<div class="grid-item update">
+									<button class="ui basic button">Cập nhật</button>
+								</div>
+								<div class="grid-item">
+									<button class="ui basic button">Hủy</button>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="search-box">
 						<div class="flex-container">
 							<div class="ui input">
@@ -404,11 +456,25 @@
 						</div>
 					</div>
 					<div class="title">
-						<select class="ui dropdown">
-							<option value="">Số lượng hiển thị</option>
-							<option value="1">Male</option>
-							<option value="0">Female</option>
-						</select>
+						<!-- <div class="ui selection dropdown">
+							<input type="hidden" name="gender">
+							<i class="dropdown icon"></i>
+							<div class="default text">Gender</div>
+							<div class="menu">
+								<div class="item" data-value="1">Male</div>
+								<div class="item" data-value="0">Female</div>
+							</div>
+						</div> -->
+						<div>
+							<select class="ui dropdown selection">
+								<option value>Gender</option>
+								<option value="1">Male</option>
+								<option value="0">Female</option>
+							</select>
+							<!-- <div class="default text">
+							Gender
+						</div>	 -->
+						</div>
 						<h3>Danh sách nhân viên khen thưởng kỷ luật</h3>
 						<button class="ui basic button" id="addNew">
 							<i class="icon user"></i>
@@ -417,79 +483,67 @@
 					</div>
 					<table class="ui celled padded table">
 						<thead>
-						  <tr><th class="single line">STT</th>
-						  <th></th>
-						  <th>Tác vụ</th>
-						  <th>Mã người dùng</th>
-						  <th>Họ tên</th>
-						  <th>Loại</th>
-						  <th>Chủ đề</th>
-						</tr></thead>
+							<tr>
+								<th>STT</th>
+								<th></th>
+								<th>Tác vụ</th>
+								<th>Mã người dùng</th>
+								<th>Họ tên</th>
+								<th>Loại</th>
+								<th>Chủ đề</th>
+							</tr>
+						</thead>
 						<tbody>
-						  <tr>
-							<td>
-							  <h2 class="ui center aligned header">A</h2>
-							</td>
-							<td class="single line">
-							  <input type="checkbox" name="" id="">
-							</td>
-							<td>
-							  <div class="ui star rating" data-rating="3" data-max-rating="3"></div>
-							</td>
-							<td class="left aligned">
-							  80% 
-							</td>
-							<td>Creatine</td>
-							<td>Creatine</td>
-							<td>Creatine</td>
-						  </tr>
-						  <tr>
-							<td>
-							  <h2 class="ui center aligned header">A</h2>
-							</td>
-							<td class="single line">
-							  <input type="checkbox" name="" id="">
-							</td>
-							<td>
-							  <div class="ui star rating" data-rating="3" data-max-rating="3"></div>
-							</td>
-							<td class="left aligned">
-							  100% 
-							</td>
-							<td>Creatine</td>
-							<td>Creatine</td>
-							<td>Creatine</td>
-						  </tr>
+							<tr>
+								<td style="width: 40px">
+									<h2 class="ui aligned header">22+</h2>
+								</td>
+								<td class="single line" style="text-align: center;">
+									<input type="checkbox" name="" id="">
+								</td>
+								<!-- <td>
+									<div class="ui star rating" data-rating="3" data-max-rating="3"></div>
+								</td>
+								<td class="left aligned">
+									80%
+								</td> -->
+								<td style="text-align: left; width: 120px;">
+									<i class="far fa-eye" style="margin: 5px; font-size: 20px;"></i>
+									<i class="fas fa-pen" style="margin: 5px; font-size: 20px;"></i>
+									<i class="fas fa-trash-alt" style="margin: 5px; font-size: 20px;"></i>
+								</td>
+								<td style="width: 150px">Đoán xem</td>
+								<td>Đức Tâm</td>
+								<td>Siêu phẩm</td>
+								<td>Học sinh giỏi</td>
+							</tr>
 						</tbody>
 						<tfoot>
-						  <tr><th colspan="7">
-							<div class="ui right floated pagination menu">
-							  <a class="icon item">
-								<i class="left chevron icon"></i>
-							  </a>
-							  <a class="item">1</a>
-							  <a class="item">2</a>
-							  <a class="item">3</a>
-							  <a class="item">4</a>
-							  <a class="icon item">
-								<i class="right chevron icon"></i>
-							  </a>
-							</div>
-						  </th>
-						</tr></tfoot>
-					  </table>
-					<div class="add-new-container">
-						<div class="add-new" id="addNewPopup">
-
-						</div>
-					</div>
+							<tr>
+								<th colspan="7">
+									<div class="ui right floated pagination menu">
+										<a class="icon item">
+											<i class="left chevron icon"></i>
+										</a>
+										<a class="item">1</a>
+										<a class="item">2</a>
+										<a class="item">3</a>
+										<a class="item">4</a>
+										<a class="icon item">
+											<i class="right chevron icon"></i>
+										</a>
+									</div>
+								</th>
+							</tr>
+						</tfoot>
+					</table>
 				</div>
 			</div>
 
 		</div>
 
 	</div>
-	
+
 	<!--   Core JS Files   -->
 	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="assets/js/core/popper.min.js"></script>
@@ -539,7 +593,7 @@
 	<script src="assets/js/award-penalty.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
 		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-	<script src="semantic/dist/semantic.min.js"></script>
+	<script src="./semantic/dist/semantic.min.js"></script>
 </body>
 
 </html>

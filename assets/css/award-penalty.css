@@ -1,54 +1,78 @@
 .search-box {
-    border: #6f42c1 solid 1px;
-    border-radius: 10px;
-    /* box-sizing: border-box; */
-    height: 120px;
+  border: #6f42c1 solid 1px;
+  border-radius: 10px;
+  height: 120px;
 }
 
 .search-box span {
-    margin: 6px 6px 0 0;
+  margin: 6px 6px 0 0;
 }
 
 .search-box .flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 100%;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
 }
 
 .search-box .flex-container button {
-    margin: 82px 0 0 0;
+  margin: 70px 0 0 0;
 }
 
 .search-box input {
-    margin: 10px;
-    width: 300px;
+  margin: 10px;
+  width: 300px;
 }
 
 .title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
 }
 
 .title h3 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .add-new-container {
-    text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .add-new {
-    width: 500px;
-    height: 500px;
-    background-color: #ccc;
-    visibility: hidden;
-    display: inline-block;
+  width: 750px;
+  height: 500px;
+  z-index: 1;
+  margin: 0 auto;
 }
 
-.add-new-container .show {
-    visibility: visible;
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
 }
+
+.grid-container .grid-item {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 60%;
+  justify-content: space-between;
+}
+
+.grid-container .update {
+  justify-content: flex-end;
+}
+
+.grid-item label {
+  padding-top: 10px;
+}
+
+.modal-create {
+  margin: 100px 0px 100px 300px !important;
+}
+
+/* option:first-child {
+  color: #ccc;
+} */
